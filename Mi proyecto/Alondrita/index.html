@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Académico Profesional - Ruta A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-size: 1.125rem; }
+    </style>
+</head>
+<body class="bg-purple-950 text-purple-100 min-h-screen flex flex-col">
+    <!-- Barra Superior Profesional -->
+    <header class="bg-purple-900 border-b border-purple-800 p-4 shadow-xl flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <span class="text-3xl">🎓</span>
+            <div>
+                <h1 class="text-xl font-bold text-purple-100">Tutor Académico (Ruta A)</h1>
+                <p class="text-xs text-purple-300">Sistema de Tutoría Socrática Adaptativa</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button id="clearChatBtn" class="bg-purple-800 hover:bg-purple-700 text-purple-200 px-3 py-2 rounded-lg text-sm transition" title="Reiniciar Sesión">🔄 Nueva Sesión</button>
+            <button id="configBtn" class="bg-purple-700 hover:bg-purple-600 text-white px-3 py-2 rounded-lg text-sm transition shadow">⚙️ Configurar API Key</button>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Estilo Workspace) -->
+    <main class="flex-1 max-w-5xl w-full mx-auto p-4 flex flex-col md:flex-row gap-4">
+        
+        <!-- Panel Lateral / Opciones de Caso de Estudio -->
+        <aside class="w-full md:w-80 bg-purple-900/50 border border-purple-800 rounded-2xl p-4 flex flex-col gap-4">
+            <div>
+                <h2 class="font-bold text-purple-200 text-lg mb-2">📚 Módulo de Estudio</h2>
+                <label class="text-xs text-purple-300 block mb-1">Selecciona el dominio de conocimiento:</label>
+                <select id="materiaSelect" class="w-full bg-purple-950 border border-purple-700 text-purple-100 p-2.5 rounded-xl focus:ring-2 focus:ring-purple-500 text-sm">
+                    <option value="Caso Principal: Desarrollo de Software (C#, ASP.NET Web Forms & SQL Server)">Desarrollo de Software (ASP.NET & SQL)</option>
+                    <option value="General: Ciencias e Ingeniería">Ciencias e Ingeniería General</option>
+                    <option value="General: Matemáticas y Razonamiento Lógico">Matemáticas y Lógica</option>
+                    <option value="General: Ciencias Sociales y Humanidades">Humanidades y Redacción</option>
+                </select>
+            </div>
+
+            <!-- Reglas Activas (Prisión del Agente) -->
+            <div class="bg-purple-950/60 border border-purple-800/80 p-3 rounded-xl flex-1 flex flex-col">
+                <h3 class="font-semibold text-purple-300 text-sm mb-1">🔒 Estado de Contención:</h3>
+                <ul class="text-xs text-purple-300 space-y-1 list-disc pl-4">
+                    <li>Guía socrática estricta (Sin respuestas directas).</li>
+                    <li>Desglose analítico paso a paso.</li>
+                    <li>Adaptación dinámica al dominio.</li>
+                </ul>
+            </div>
+
+            <div class="text-center text-xs text-purple-400 pt-2 border-t border-purple-800">
+                Autora: Alondra Marie Flores Pérez<br>Arquitectura Técnica: Gemini & Alondra
+            </div>
+        </aside>
+
+        <!-- Ventana Principal de Conversación -->
+        <section class="flex-1 bg-purple-900/30 border border-purple-800 rounded-2xl p-4 flex flex-col h-[650px] shadow-inner">
+            
+            <!-- Historial de Conversación -->
+            <div id="chatBox" class="flex-1 overflow-y-auto space-y-4 pr-2">
+                <div class="bg-purple-800/80 border border-purple-700 p-4 rounded-2xl text-purple-100 max-w-[85%] shadow">
+                    <strong>Tutor:</strong> ¡Hola! Bienvenida o bienvenido a tu sesión de tutoría inteligente. Estoy configurado bajo la metodología socrática para ayudarte a razonar y construir tus propias soluciones. ¿Con qué duda o caso práctico comenzamos hoy?
+                </div>
+            </div>
+
+            <!-- Caja de Entrada -->
+            <form id="chatForm" class="mt-4 flex gap-2 pt-2 border-t border-purple-800">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta o paso a resolver..." class="flex-1 bg-purple-900/90 border border-purple-700 rounded-xl px-4 py-3 text-purple-100 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-inner" required />
+                <button type="submit" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg flex items-center justify-center">Enviar 🚀</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
